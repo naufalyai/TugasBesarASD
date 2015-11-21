@@ -82,13 +82,13 @@ void insertLastStatus (list &l, address p);
 void insertAfterStatus (list &l, address p,address prec);
 void deleteFirstStatus (list &l);
 void deleteLastStatus (list &l);
-void deleteAfterStatus (list &l);
+void deleteAfterStatus (list &l,address prec);
 void insertFirstKomen (address &p, address_k c);
 void insertLastKomen (address &p, address_k c);
 void insertAfterKomen (address &p, address_k c,address_k prec);
 void deleteFirstKomen (address &p);
 void deleteLastKomen (address &p);
-void deleteAfterKomen (address &p);
+void deleteAfterKomen (address &p,address_k prec);
 
 void tambahstatus (list &l, infostatus x);
 void deletestatusdankomentar (list &l, string idstatus);
