@@ -90,3 +90,65 @@ void insertAfterKomen(address &p,address_k c,string idkomenprec){
         insertFirstKomen(p,c);
     }
 }
+
+//dzaky
+void deleteFirstStatus(list &l) {
+    address P=first(l);
+    if (first(l)!=NULL) {
+        if (next(P)==NULL) {
+            first(l)=NULL;
+            last(l)=NULL;
+        }
+        else {
+            first(l)=next(first(l));
+            next(P)=NULL;
+            prev(P)=NULL;
+            prev(first(l))=NULL;
+        }
+    }
+}
+void deleteLastStatus(list &l) {
+
+    if (first(l)!=NULL) {
+        address P=first(l);
+        if (next(P)==NULL) {
+            deleteFirstStatus(l);
+        }
+        else {
+            address P=last(l);
+            last(l)=prev(last(l));
+            prev(P)=NULL;
+            next(last(l))=NULL;
+        }
+    }
+}
+
+void deleteAfterStatus(list &l, address prec) {
+    if(first(l)!=NULL) {
+        address P = first(l);
+        if(next(P) == NULL) {
+            deleteFirstStatus(l);
+        } else {
+            while(P != NULL) {
+                if(P == prec) {
+                    if(next(next(P)) == NULL) {
+                        deleteLastStatus(l);
+                    } else {
+                        address Q = next(P);
+                        next(P) = next(next(P));
+                        prev(next(P)) = P;
+                        next(Q) = NULL;
+                        prev(Q) = NULL;
+                    }
+                    break;
+                }
+                P = next(P);
+            }
+        }
+    }
+}
+
+//uya
+
+//komang
+
